@@ -80,6 +80,21 @@ POST /api/talent-center/mcp/install-plan
 npx wrangler pages deploy public --project-name aegis-talent-center
 ```
 
+Current Pages preview:
+
+```text
+https://55bdf68c.aegis-talent-center.pages.dev
+```
+
+Recommended production domain:
+
+```text
+talents.aegis.haloforge.dev
+```
+
+If DNS/API permissions are not available locally, add the custom domain from the
+Cloudflare dashboard and point it at the Pages project.
+
 The long-term target is a Cloudflare Pages site plus optional Workers/Pages
 Functions for search, review, signing, and install-plan preview.
 
