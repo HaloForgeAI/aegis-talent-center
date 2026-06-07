@@ -43,6 +43,43 @@ controlled by Git.
 Cloudflare Pages Functions run on the Workers runtime and can bind Cloudflare
 products such as D1 and R2 when needed.
 
+## Phase 2.5: Private Asset Proxy
+
+Cloudflare Workers can also provide a public download facade for private GitHub
+assets. This is useful when the source repository must stay private but the
+installer needs a stable public URL.
+
+Recommended use:
+
+- Release asset proxy for CLI archives, Docker image archive fallbacks,
+  checksums, and signed catalog snapshots.
+- Catalog proxy for curated JSON that is generated from a private workflow.
+- Short-lived signed URLs for larger artifacts.
+
+Do not expose the GitHub token to the browser. Store it as a Worker secret and
+use the narrowest practical GitHub token scope. The Worker should stream the
+asset, set cache headers, and never return private repository metadata beyond
+the selected public artifact.
+
+Suggested routes:
+
+```text
+GET /api/releases/:repo/:tag/:asset
+GET /api/catalog/:name
+GET /api/checksums/:tag/SHA256SUMS
+```
+
+For Docker, prefer one of these before building a registry proxy:
+
+1. Make the GHCR package public while keeping the source repo private.
+2. Attach `aegis-server-<tag>-linux-amd64.docker.tar.gz` to the public release.
+3. Use a Worker only for the Docker archive asset.
+
+Proxying `docker pull` itself is a different project: it must speak the OCI
+Registry API, handle auth token flows, manifests, blobs, ranges, caching, and
+content digests. Treat that as a dedicated registry proxy, not as the same
+endpoint as release downloads.
+
 ## Phase 3: Real Public Marketplace
 
 This phase needs database and object storage.

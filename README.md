@@ -36,6 +36,12 @@ Cloudflare Worker / Pages Function is the public marketplace backend. It is not
 the same thing as an Aegis Local Gateway worker, which runs on a user's machine
 and executes explicit tool calls.
 
+The same Worker layer can later proxy selected private GitHub release assets by
+using a server-side GitHub token. That is appropriate for CLI archives,
+checksums, catalog snapshots, and Docker archive fallbacks. Full `docker pull`
+proxying should be treated as a separate OCI registry proxy project; the simpler
+path is still public GHCR visibility or a public Docker archive asset.
+
 ## Repository Layout
 
 ```text
