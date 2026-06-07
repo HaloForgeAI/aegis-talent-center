@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegis.haloforge.dev/spec/install-plan.schema.json",
+  "title": "Aegis Talent Install Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["talentId", "status", "steps"],
+  "properties": {
+    "talentId": { "type": "string" },
+    "status": {
+      "enum": ["ready", "needs_secrets", "needs_runtime", "blocked"]
+    },
+    "summary": { "type": "string" },
+    "requiredSecrets": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[A-Z0-9_]+$" },
+      "uniqueItems": true
+    },
+    "requiredRuntime": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "label"],
+        "properties": {
+          "kind": {
+            "enum": ["read", "configure_secret", "install_runtime", "register", "verify"]
+          },
+          "label": { "type": "string" },
+          "command": { "type": "string" },
+          "platform": {
+            "enum": ["macos", "windows", "linux", "any"]
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

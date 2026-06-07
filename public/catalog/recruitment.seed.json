@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "2026-06-07",
+  "updatedAt": "2026-06-07T00:00:00Z",
+  "templates": [
+    {
+      "id": "agent-template.research-assistant",
+      "kind": "agent-template",
+      "displayName": "Research Assistant",
+      "description": "A virtual member template for source-backed research, brief writing, and weekly insight digests.",
+      "recommendedTalents": [
+        "dev.aegis.talent.web-research",
+        "mcp.notion",
+        "mcp.figma"
+      ],
+      "acceptanceChecklist": [
+        "Can produce cited research notes.",
+        "Can write an owner-readable brief.",
+        "Can record evidence and open follow-up work items."
+      ]
+    },
+    {
+      "id": "agent-template.ops-coordinator",
+      "kind": "agent-template",
+      "displayName": "Ops Coordinator",
+      "description": "A virtual member template for reminders, status rollups, release checks, and delivery follow-up.",
+      "recommendedTalents": [
+        "dev.aegis.talent.telegram-channel",
+        "mcp.linear",
+        "mcp.cloudflare"
+      ],
+      "acceptanceChecklist": [
+        "Can read current work status from structured sources.",
+        "Can prepare a weekly report with missing evidence called out.",
+        "Can notify the owner through configured channels."
+      ]
+    },
+    {
+      "id": "role-posting.team-status-loop",
+      "kind": "role-posting",
+      "displayName": "Team Status Loop",
+      "description": "A reusable role need for collecting owner-reported team progress and turning it into structured member reports.",
+      "recommendedTalents": [
+        "dev.aegis.talent.telegram-channel",
+        "dev.aegis.talent.web-research"
+      ],
+      "acceptanceChecklist": [
+        "No employee account binding is required.",
+        "Owner natural-language reports are planned by Aegis Manager before storage.",
+        "Reports can be audited through Aegis evidence surfaces."
+      ]
+    }
+  ]
+}

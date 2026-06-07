@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "2026-06-07",
+  "updatedAt": "2026-06-07T00:00:00Z",
+  "source": "HaloForgeAI Aegis seed catalog",
+  "entries": [
+    {
+      "id": "mcp.notion",
+      "displayName": "Notion MCP",
+      "description": "Plan and connect a Notion MCP server for workspace notes, databases, and project pages.",
+      "homepage": "https://www.notion.com/",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "requiredSecrets": ["NOTION_API_KEY"],
+      "requiredRuntime": ["node", "npx"],
+      "tags": ["productivity", "docs", "workspace"]
+    },
+    {
+      "id": "mcp.linear",
+      "displayName": "Linear MCP",
+      "description": "Plan and connect Linear issue/project access for team operating loops.",
+      "homepage": "https://linear.app/",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@linear/mcp-server"],
+      "requiredSecrets": ["LINEAR_API_KEY"],
+      "requiredRuntime": ["node", "npx"],
+      "tags": ["issues", "product", "team"]
+    },
+    {
+      "id": "mcp.figma",
+      "displayName": "Figma MCP",
+      "description": "Plan and connect Figma design context for product/design workflows.",
+      "homepage": "https://www.figma.com/",
+      "transport": "streamable_http",
+      "endpoint": "https://mcp.figma.com/mcp",
+      "requiredSecrets": [],
+      "requiredRuntime": [],
+      "tags": ["design", "product", "mcp"]
+    },
+    {
+      "id": "mcp.cloudflare",
+      "displayName": "Cloudflare MCP",
+      "description": "Plan and connect Cloudflare operations for domains, Workers, Pages, and deployment checks.",
+      "homepage": "https://www.cloudflare.com/",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@cloudflare/mcp-server"],
+      "requiredSecrets": ["CLOUDFLARE_API_TOKEN"],
+      "requiredRuntime": ["node", "npx"],
+      "tags": ["infra", "cloudflare", "deployment"]
+    }
+  ]
+}

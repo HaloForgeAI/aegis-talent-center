@@ -1,0 +1,31 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: validate specs and catalog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JSON syntax
+        run: |
+          jq empty spec/*.json
+          jq empty catalog/*.json
+      - name: Static site shape
+        run: |
+          test -f public/index.html
+          test -f public/styles.css
+          diff -ru spec public/spec
+          diff -ru catalog public/catalog
+          grep -q "Aegis Talent Center" public/index.html

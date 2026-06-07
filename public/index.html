@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aegis Talent Center</title>
+    <meta
+      name="description"
+      content="Public Talent specs, seed catalogs, and marketplace-facing docs for Aegis."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">
+        <span class="mark">A</span>
+        <span>Aegis Talent Center</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#specs">Specs</a>
+        <a href="#catalogs">Catalogs</a>
+        <a href="#market">Market</a>
+        <a href="https://github.com/HaloForgeAI/aegis-talent-center">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Public Aegis ecosystem</p>
+          <h1>A trusted center for Aegis Talents.</h1>
+          <p>
+            Discover MCP servers, publish Talent manifests, and prepare future
+            marketplace flows without mixing public catalog data into the
+            private Aegis runtime source.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#specs">Read the specs</a>
+            <a class="button" href="#catalogs">Browse seed catalogs</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="specs">
+        <div class="section-heading">
+          <p class="eyebrow">Contracts first</p>
+          <h2>What a Talent declares</h2>
+          <p>
+            A Talent can be a skill, provider, channel adapter, UI panel, cron
+            hook, memory hook, or a bundle of those contracts. The center
+            publishes the contract; tenant-local Aegis installs and audits it.
+          </p>
+        </div>
+        <div class="grid">
+          <article>
+            <h3>Talent Manifest</h3>
+            <p>Scope, contracts, settings schema, permissions, memory hooks, tests, and provenance.</p>
+            <a href="/spec/talent-manifest.schema.json">Open schema</a>
+          </article>
+          <article>
+            <h3>MCP Catalog</h3>
+            <p>Searchable metadata for remote and local MCP-backed Talents.</p>
+            <a href="/spec/mcp-catalog.schema.json">Open schema</a>
+          </article>
+          <article>
+            <h3>Install Plan</h3>
+            <p>Secrets, runtimes, commands, and verification steps before install.</p>
+            <a href="/spec/install-plan.schema.json">Open schema</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="band alt" id="catalogs">
+        <div class="section-heading">
+          <p class="eyebrow">Seed catalogs</p>
+          <h2>Start with inspectable public JSON</h2>
+          <p>
+            The first center is static by design. Aegis Server can point to a
+            hosted catalog URL today, while search, signing, review, and install
+            preview can become Workers or Pages Functions later.
+          </p>
+        </div>
+        <div class="list">
+          <a href="/catalog/official-mcp.seed.json">Official MCP seed</a>
+          <a href="/catalog/official-talents.seed.json">Official Talents seed</a>
+          <a href="/catalog/recruitment.seed.json">Recruitment templates seed</a>
+        </div>
+      </section>
+
+      <section class="band" id="market">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Market status</p>
+            <h2>The foundation is live. The marketplace is next.</h2>
+          </div>
+          <p>
+            Aegis already has Talent registry, runtime health, testkit,
+            prepare gates, adapter handoff evidence, and MCP install-plan APIs.
+            A full public market still needs review, signing, publisher
+            identity, version rollback, UI, and tenant-safe installation rails.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Aegis Talent Center by HaloForgeAI</span>
+      <a href="https://aegis.haloforge.dev/">Aegis site</a>
+    </footer>
+  </body>
+</html>

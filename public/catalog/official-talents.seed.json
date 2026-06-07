@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "2026-06-07",
+  "updatedAt": "2026-06-07T00:00:00Z",
+  "talents": [
+    {
+      "id": "dev.aegis.talent.web-research",
+      "version": "0.1.0",
+      "displayName": "Web Research",
+      "description": "A structured research workflow contract for search, source review, and cited synthesis.",
+      "scope": ["aegis", "agent", "workspace"],
+      "contracts": {
+        "methods": ["web-research"],
+        "skills": ["web-research"],
+        "tools": ["web.search", "web.extract"],
+        "providers": [],
+        "channels": [],
+        "uiPanels": [],
+        "cron": []
+      },
+      "settingsSchema": {},
+      "permissions": {
+        "network": ["https://*"],
+        "filesystem": "none",
+        "secrets": [],
+        "approval": "none"
+      },
+      "memoryHooks": {
+        "prefetch": false,
+        "remember": true,
+        "finalize": true
+      },
+      "tests": {
+        "offline": [],
+        "live": ["Run a provider-backed research task and attach source evidence."]
+      },
+      "provenance": {
+        "source": "aegis-official",
+        "homepage": "https://aegis.haloforge.dev/",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "dev.aegis.talent.telegram-channel",
+      "version": "0.1.0",
+      "displayName": "Telegram Channel",
+      "description": "Channel contract for using Telegram as an Aegis owner/operator surface.",
+      "scope": ["channel"],
+      "contracts": {
+        "methods": [],
+        "skills": [],
+        "tools": [],
+        "providers": [],
+        "channels": ["telegram"],
+        "uiPanels": ["channel-settings"],
+        "cron": []
+      },
+      "settingsSchema": {
+        "type": "object",
+        "required": ["tenant", "mode"],
+        "properties": {
+          "tenant": { "type": "string", "default": "studio-a" },
+          "mode": { "type": "string", "enum": ["polling", "webhook"] }
+        }
+      },
+      "permissions": {
+        "network": ["https://api.telegram.org"],
+        "filesystem": "none",
+        "secrets": ["AEGIS_TELEGRAM_BOT_TOKEN"],
+        "approval": "act_with_approval"
+      },
+      "memoryHooks": {
+        "prefetch": false,
+        "remember": false,
+        "finalize": false
+      },
+      "tests": {
+        "offline": ["Validate channel binding settings and secret references."],
+        "live": ["Send a channel diagnostic message and record delivery evidence."]
+      },
+      "provenance": {
+        "source": "aegis-official",
+        "homepage": "https://aegis.haloforge.dev/",
+        "license": "Apache-2.0"
+      }
+    }
+  ]
+}
