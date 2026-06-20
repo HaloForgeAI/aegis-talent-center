@@ -56,9 +56,9 @@
       },
       "settingsSchema": {
         "type": "object",
-        "required": ["tenant", "mode"],
+        "required": ["owner_profile", "mode"],
         "properties": {
-          "tenant": { "type": "string", "default": "studio-a" },
+          "owner_profile": { "type": "string", "default": "owner" },
           "mode": { "type": "string", "enum": ["polling", "webhook"] }
         }
       },

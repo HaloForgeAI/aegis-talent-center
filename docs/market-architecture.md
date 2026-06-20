@@ -1,7 +1,7 @@
 # Market Architecture
 
 Aegis Talent Center can grow in three phases. The important boundary is that
-public discovery is separate from tenant-local installation and execution.
+public discovery is separate from owner-profile-local installation and execution.
 
 ## Phase 1: Curated Static Center
 
@@ -95,7 +95,7 @@ agent_templates(id, manifest_json, status, published_at)
 role_postings(id, template_json, status, published_at)
 ```
 
-The marketplace still does not execute tenant tools. It only publishes signed
+The marketplace still does not execute owner-profile tools. It only publishes signed
 metadata and install plans. Aegis Server and Local Gateway continue to own
 installation, binding, permissions, execution, and audit evidence.
 

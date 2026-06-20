@@ -4,8 +4,8 @@ A Talent is an installable Aegis capability unit. It can be a skill, method,
 tool bundle, provider, channel adapter, UI panel, cron hook, memory hook, or a
 composition of those contracts.
 
-The manifest describes what a Talent claims. A tenant-local Aegis Server decides
-whether to install, bind, authorize, prepare, execute, and audit it.
+The manifest describes what a Talent claims. An owner-profile-local Aegis Server
+decides whether to install, bind, authorize, prepare, execute, and audit it.
 
 ## Required Fields
 
@@ -30,5 +30,5 @@ Raw secret values must not appear in manifests or binding configs.
 ## Runtime Boundary
 
 The public Talent Center can publish manifests and install plans. It must not
-execute provider/channel/UI IO for a tenant. Execution belongs to Aegis Server
-and Local Gateway, with explicit tool calls and audit evidence.
+execute provider/channel/UI IO for an owner profile. Execution belongs to Aegis
+Server and Local Gateway, with explicit tool calls and audit evidence.

@@ -21,5 +21,5 @@ health, and audit rails as ordinary Talents.
 - Live marketplace search service.
 - Automated execution of third-party code.
 
-Those should come after signing, review, rollback, and tenant isolation policies
-are mature.
+Those should come after signing, review, rollback, and owner/profile isolation
+policies are mature.

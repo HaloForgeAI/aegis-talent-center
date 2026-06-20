@@ -20,7 +20,7 @@ owns the public contracts and catalog material that a server or user can inspect
 - Not a full third-party marketplace.
 - Not a payment or hiring platform.
 - Not the runtime that executes provider/channel/UI IO.
-- Not a replacement for tenant-local Aegis Talent registry and audit logs.
+- Not a replacement for owner-profile-local Aegis Talent registry and audit logs.
 
 ## Market Shape
 
