@@ -51,7 +51,7 @@
         "requiredRuntime": {
           "type": "array",
           "items": {
-            "enum": ["node", "npm", "npx", "python", "uvx", "docker", "custom"]
+            "enum": ["node", "npm", "npx", "python", "uvx", "custom"]
           },
           "uniqueItems": true
         },

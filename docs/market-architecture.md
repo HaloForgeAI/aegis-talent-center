@@ -51,8 +51,7 @@ installer needs a stable public URL.
 
 Recommended use:
 
-- Release asset proxy for CLI archives, Docker recovery archives,
-  checksums, and signed catalog snapshots.
+- Release asset proxy for native bundles, checksums, and signed catalog snapshots.
 - Catalog proxy for curated JSON that is generated from a private workflow.
 - Short-lived signed URLs for larger artifacts.
 
@@ -69,18 +68,8 @@ GET /api/catalog/:name
 GET /api/checksums/:tag/SHA256SUMS
 ```
 
-For Docker, keep the official path first:
-
-1. Keep the GHCR package public while keeping the source repo private.
-2. Attach `aegis-server-<tag>-linux-amd64.docker.tar.gz` to the public release
-   only as a recovery archive.
-3. Use a Worker only for ordinary release asset downloads, not for normal
-   `docker pull`.
-
-Proxying `docker pull` itself is a different project: it must speak the OCI
-Registry API, handle auth token flows, manifests, blobs, ranges, caching, and
-content digests. Treat that as a dedicated registry proxy, not as the same
-endpoint as release downloads.
+Use a Worker only for ordinary release asset downloads and catalog snapshots.
+Native bundle download should stay simple: fetch, checksum, install.
 
 ## Phase 3: Real Public Marketplace
 

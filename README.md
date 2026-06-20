@@ -37,11 +37,8 @@ the same thing as an Aegis Local Gateway worker, which runs on a user's machine
 and executes explicit tool calls.
 
 The same Worker layer can later proxy selected private GitHub release assets by
-using a server-side GitHub token. That is appropriate for CLI archives,
-checksums, catalog snapshots, and Docker recovery archives. Aegis Server's
-official Docker path remains public GHCR. Full `docker pull` proxying should be
-treated as a separate OCI registry proxy project because it must implement the
-OCI Registry API rather than ordinary asset downloads.
+using a server-side GitHub token. That is appropriate for native bundles,
+checksums, and catalog snapshots.
 
 ## Repository Layout
 

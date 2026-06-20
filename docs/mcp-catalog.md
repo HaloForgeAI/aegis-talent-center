@@ -25,5 +25,5 @@ host runtime, filesystem, and installed tools.
 ## Runtime Requirements
 
 Catalog entries should list required local runtimes such as `node`, `npx`,
-`python`, `uvx`, or `docker`. If a runtime is missing, the install plan should
+`python`, `uvx`, or `custom`. If a runtime is missing, the install plan should
 say so; it should not mark the Talent as installed.
